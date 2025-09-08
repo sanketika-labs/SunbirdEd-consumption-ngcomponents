@@ -16,13 +16,24 @@
           </sb-toc-card>
     </div>
 </div>
-<div  *ngIf="isChapterListing">
+<div *ngIf="isChapterListing">
   <div class="sb-curiculum-responsive-grid">
-    <div class="sb-curiculum__border" *ngFor="let item of tocData?.children; let index = index;" (click)="onTocChapterClick($event,item)" tabindex="0">
+    <div
+      class="sb-curiculum__border"
+      *ngFor="let item of tocData?.children; let i = index; let first = first"
+      [style.pointer-events]="(first || showCompleted(tocData.children[i-1])) ? 'auto' : 'none'"
+      [style.opacity]="(first || showCompleted(tocData.children[i-1])) ? 1 : 0.55"
+      (click)="(first || showCompleted(tocData.children[i-1])) && onTocChapterClick($event, item)"
+    >
       {{ createUniqueId(tocData, item) }}
       <div class="sb-curiculum" style="border:none;">
       <div class="sb--completed" *ngIf="showCompleted(item)">
           <img alt="" src="assets/common-consumption/images/completed.svg" />
+      </div>
+      <div *ngIf="!(first || showCompleted(tocData.children[i-1]))"
+           class="sb--locked" aria-hidden="true"
+           style="position:absolute; top:8px; right:8px; display:inline-flex; align-items:center;">
+          <ion-icon name="lock-closed-outline"></ion-icon>
       </div>
       <div class="sb-curiculum__chapter">
         <div class="title">{{item?.name}}</div>
