@@ -30,10 +30,9 @@
       <div class="sb--completed" *ngIf="showCompleted(item)">
           <img alt="" src="assets/common-consumption/images/completed.svg" />
       </div>
-      <div *ngIf="!(first || showCompleted(tocData.children[i-1]))"
-           class="sb--locked" aria-hidden="true"
-           style="position:absolute; top:8px; right:8px; display:inline-flex; align-items:center;">
-          <ion-icon name="lock-closed-outline"></ion-icon>
+      <div *ngIf="!(first || showCompleted(tocData.children[i-1]))" class="sb--locked" aria-hidden="true"
+        style="position:absolute; top:8px; right:8px; display:inline-flex; align-items:center;">
+        <img alt="" src="assets/common-consumption/images/lock.svg" />
       </div>
       <div class="sb-curiculum__chapter">
         <div class="title">{{item?.name}}</div>
