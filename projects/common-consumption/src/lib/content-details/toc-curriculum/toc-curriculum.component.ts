@@ -62,6 +62,14 @@ export class TocCurriculumComponent implements OnInit {
     }
   }
 
+  checkCourseCompleted(identifier) {
+    return this.contentStatus.find((item) => {
+      if (item.contentId === identifier && item.status === 2) {
+        return true;
+      }
+    });
+  }
+
   setActiveContent() {
     if (this.tocData && this.tocData.children) {
       const flattenDeepContents = this.flattenDeep(this.tocData.children);
@@ -197,7 +205,7 @@ export class TocCurriculumComponent implements OnInit {
   fetchProgress(item?) {
     var bgColor = this.progressColor;
     let widthStyle = item.progressPercentage!=null?item.progressPercentage+"%":"2%";
-    
+
     return {
       width: widthStyle,
       'background-color':bgColor
