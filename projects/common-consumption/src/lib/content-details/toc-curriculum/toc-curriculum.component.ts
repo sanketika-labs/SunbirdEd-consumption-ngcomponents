@@ -62,14 +62,6 @@ export class TocCurriculumComponent implements OnInit {
     }
   }
 
-  checkCourseCompleted(identifier) {
-    return this.contentStatus.find((item) => {
-      if (item.contentId === identifier && item.status === 2) {
-        return true;
-      }
-    });
-  }
-
   setActiveContent() {
     if (this.tocData && this.tocData.children) {
       const flattenDeepContents = this.flattenDeep(this.tocData.children);
