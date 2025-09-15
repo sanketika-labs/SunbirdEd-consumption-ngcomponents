@@ -1,6 +1,6 @@
 {
-    "name": "@project-sunbird/common-consumption",
-    "version": "8.0.6",
+    "name": "@project-fmps/common-consumption",
+    "version": "1.0.2",
     "license": "MIT",
     "repository": {
         "type": "git",

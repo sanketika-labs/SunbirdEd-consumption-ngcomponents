@@ -8,12 +8,11 @@
     "install-dependencies:build-lib": "npm i && npm run build-lib",
     "build-lib": "ng build commonConsumption && npm run copy:assets",
     "test": "ng test",
-    "lint": "ng lint",
+    "lint": "eslint \"projects/common-consumption/**/*.ts\"",
     "e2e": "ng e2e",
     "copy:assets": "node scripts/copy-assets",
     "test:ci": "ng test --code-coverage --watch=false --browsers=ChromeHeadless",
     "sonar-scanner": "sonar-scanner",
-    "lint": "eslint \"projects/common-consumption/**/*.ts\"",
     "lint:fix": "eslint \"projects/common-consumption/**/*.ts\" --fix"
   },
   "engines": {
@@ -53,6 +52,7 @@
     "copyfiles": "2.1.1",
     "cpy-cli": "2.0.0",
     "eslint": "^7.32.0",
+    "fs-extra": "^11.3.1",
     "jasmine-core": "2.99.1",
     "jasmine-spec-reporter": "4.2.1",
     "karma": "6.4.1",
