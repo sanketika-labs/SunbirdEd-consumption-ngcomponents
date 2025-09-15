@@ -23,6 +23,7 @@ export class TocCardComponent implements OnInit, OnChanges {
   @Input() scoreLabel = '';
   @Input() maxAttempts;
   @Input() disabled = '';
+  @Input() isDisabled = false;
 
   fallbackImg = COMMON_CONSUMPTION_CONSTANTS.TOC_CARD_FALLBACK_IMG;
   iconPathMap: any;
@@ -30,7 +31,6 @@ export class TocCardComponent implements OnInit, OnChanges {
   isCourseCompleted = false;
   bestScoreLabel: string;
   isLastAttempt: boolean = false;
-  isDisabled: boolean = false;
   get TocCardType() { return TocCardType; }
   displayScore: boolean = true;
 
